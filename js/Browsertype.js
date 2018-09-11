@@ -39,4 +39,4 @@ function BrowserType()
     if (isEdge) { return "Edge";} 
   }//myBrowser() end 
 
-  alert(BrowserType());
+
