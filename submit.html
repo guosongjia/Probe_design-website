@@ -74,28 +74,38 @@
 			</h1></legend>
 			<br>
 			<div id="cellType" class="pure-u-8-9">
-				<p style="padding-left: 23px; padding-top: 23px">Cell/Tissue Type</p>
-				<div method="get">
+				<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Cell/Tissue Type</p>
+				<div method="get" style="margin-left: 20px;margin-top:12px; font-size: 17px">
 					<input type="checkbox" name="HEK293" style="margin-left: 23px">HEK293<br>
-					<input type="checkbox" name="mse" style="margin-left: 23px">mse<br>
-					<input type="checkbox" name="HEK293T">
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					<br>
-					
-
-
+					<input type="checkbox" name="HEK293T" style="margin-left: 23px">HEK293T<br>
+					<input type="checkbox" name="Hela" style="margin-left: 23px">Hela<br>
+					<input type="checkbox" name="MES" style="margin-left: 23px">MES<br>	
 				</div>
+				<div id="probeLength" class="pure-u-8-9">
+					<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Probe Length</p>
+					<div id="probeLengthwords" >
+						<span class="input-group-addon">Min</span>
+					    <input type="text" id="probe_min_length" class="parametertext">
+					    <span class="input-group-addon">Max</span>
+					    <input type="text" id="probe_max_length" class="parametertext">						
+					</div>
+				</div>
+				<div class="pure-u-8-9">
+					<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Probe Melting Temperature</p>
+					<div id="Meltingtemperature">
+						<span class="input-group-addon">Min</span>
+						<input type="text" id="melting_min_temperature" class="parametertext">
+						<span class="input-group-addon">Max</span>
+						<input type="text" id="melting_max_temperature" class="parametertext">						
+					</div>					
+				</div>
+				<div>
+					
+				</div>
+					
 				
-
 			</div>
+			
 			
 
 
