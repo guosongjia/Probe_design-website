@@ -92,7 +92,7 @@ abbr,acronym { border:0;
 
 
 #myfile{
-	visibility:hidden;
+	visibility:;
 }
 
 #uploadbutton{
@@ -109,6 +109,14 @@ abbr,acronym { border:0;
 
 #Meltingtemperature{
 	margin-left: 40px;margin-top: 10px
+}
+
+#probeLength{ \
+
+}
+
+#meltingtem{
+	
 }
 
 

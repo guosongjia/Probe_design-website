@@ -35,7 +35,7 @@
 				Input Your Sequences
 			</h1></legend>
 			<p style="padding:10px 0 10px 20px">Paste sequences here (In FASTA format)</p>
-			<textarea rows="10" cols="70" oninput="clear_uoload_file()" style="margin-left: 23px ">				
+			<textarea id="targetinput" rows="10" cols="70" style="margin-left: 23px ">				
 			</textarea>
 			<br>
 			<p style="padding-left: 20px">Or uoload FASTA file:</p>
@@ -43,13 +43,6 @@
 				<button class="pure-button" id="btn" style="margin:0px 0 0 23px">Browse..</button>		
 				<input type="text" disabled="disabled"  value="Target sequence names." id="filename" style="padding-right:  300px;border:1px;height: 35px;padding-left: 10px;margin-left:-4.5px">
 				<input type="file" id="myfile" accept=".fasta, .faa, .fna, .fsa">
-				<script type="text/javascript">
-					var file = document.getElementById("myfile")
-					var filename = document.getElementById("filename")
-					file.addEventListener("onchange",function(){
-						filename.value=file.value
-					})
-				</script>
 				<script type="text/javascript">
 					var btn = document.querySelector('#btn'),
                         ipt = document.querySelector('#myfile');
@@ -63,7 +56,7 @@
 		    <p style="padding-left: 25px">Upload sequence and Start mission</p>
 		    <p style="padding-left: 25px">1.Push "Upload sequence" buttom to upload your target sequence</p>
 		    <p style="padding-left: 25px">2.Push "Start mission" buttom to start probe design program.</p>
-		    <button class="pure-button" id="uploadbutton" name="upload" onclick="uploadinfo()">Upload sequence</button>		
+		    <button class="pure-button" id="uploadbutton" name="upload" onclick="check()">Upload sequence</button>		
 	    </div>
 	</form>
 
@@ -73,7 +66,7 @@
 				Parameters
 			</h1></legend>
 			<br>
-			<div id="cellType" class="pure-u-8-9">
+			<div id="cellType" class="pure-u-1-2">
 				<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Cell/Tissue Type</p>
 				<div method="get" style="margin-left: 20px;margin-top:12px; font-size: 17px">
 					<input type="checkbox" name="HEK293" style="margin-left: 23px">HEK293<br>
@@ -81,7 +74,7 @@
 					<input type="checkbox" name="Hela" style="margin-left: 23px">Hela<br>
 					<input type="checkbox" name="MES" style="margin-left: 23px">MES<br>	
 				</div>
-				<div id="probeLength" class="pure-u-8-9">
+				<div id="probeLength" >
 					<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Probe Length</p>
 					<div id="probeLengthwords" >
 						<span class="input-group-addon">Min</span>
@@ -90,7 +83,7 @@
 					    <input type="text" id="probe_max_length" class="parametertext">						
 					</div>
 				</div>
-				<div class="pure-u-8-9">
+				<div id="meltingtem">
 					<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Probe Melting Temperature</p>
 					<div id="Meltingtemperature">
 						<span class="input-group-addon">Min</span>
@@ -99,8 +92,12 @@
 						<input type="text" id="melting_max_temperature" class="parametertext">						
 					</div>					
 				</div>
-				<div>
-					
+				<div id="strmode">
+					<p style="padding-left: 23px; padding-top: 23px; font-size: 20px">Structure Mode</p>
+					<span></span>
+					<br>
+					<br>
+					<br>
 				</div>
 					
 				
