@@ -51,9 +51,13 @@ abbr,acronym { border:0;
 	height: 20px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;border:1px solid #ccc;
 }
 
+.btn{
+	display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: 400;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;border:1px solid transparent;
+}
 
-
-
+.form-control{
+	display: block;width: 70%;height: 34px;padding: 0px 0px; font-size: 14px;line-height: 1.42857143;color: #555;border: 1px solid #ccc;border-radius: 4px;
+}
 
 
 
@@ -68,7 +72,7 @@ abbr,acronym { border:0;
 }
 
 #parameterarea{
-	padding-left: 220px;margin-top: -240px; 
+	padding-left: 220px;margin-top: -240px; border-top: 5px
 }
 
 #webtop{
@@ -86,7 +90,7 @@ abbr,acronym { border:0;
 }
 
 #sampleload{
-	border-style: dashed; border-color: rgba(10,73,88,1); margin: -280px 0px 350px 900px;padding: 15px 0 0 0;
+	border-style: dashed; border-color: rgba(10,73,88,1); margin: -250px 0px 350px 900px;padding: 15px 0 0 0;
 }
 
 
@@ -104,11 +108,11 @@ abbr,acronym { border:0;
 }
 
 #probeLengthwords{
-	margin-left: 40px;margin-top: 10px
+	margin-left: 70px;margin-top: 10px
 }
 
 #Meltingtemperature{
-	margin-left: 40px;margin-top: 10px
+	margin-left: 70px;margin-top: 10px
 }
 
 #probeLength{ \
