@@ -32,6 +32,22 @@
             background-color: rgba(59,154,156,1);
             border: 1px solid rgba(59,154,156,1);
         }
+        [id="checkbox-3"]:checked + label {
+            background-color: rgba(59,154,156,1);
+            border: 1px solid rgba(59,154,156,1);
+        }
+        [id="checkbox-4"]:checked + label {
+            background-color: rgba(59,154,156,1);
+            border: 1px solid rgba(59,154,156,1);
+        }
+        [id="checkbox-5"]:checked + label {
+            background-color: rgba(59,154,156,1);
+            border: 1px solid rgba(59,154,156,1);
+        }
+        [id="checkbox-6"]:checked + label {
+            background-color: rgba(59,154,156,1);
+            border: 1px solid rgba(59,154,156,1);
+        }
 	</style>
 	<meta name="oligo nucleotide probe design tool" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -97,11 +113,23 @@
 			<br>
 			<div id="cellType" class="">
 				<p style="padding-left: 50px; padding-top: 23px; font-size: 20px">Cell/Tissue Type</p>
-				<div method="get" style="margin-left: 20px;margin-top:12px; font-size: 17px">
-					<input type="checkbox" name="HEK293" style="margin-left: 50px">HEK293<br>
-					<input type="checkbox" name="HEK293T" style="margin-left: 50px">HEK293T<br>
-					<input type="checkbox" name="Hela" style="margin-left: 50px">Hela<br>
-					<input type="checkbox" name="MES" style="margin-left: 50px">MES<br>	
+				<div method="get" style="margin-left: 70px;margin-top:12px; font-size: 17px">
+					<span class="" style="margin-top: 10px">
+					    <input type="checkbox" value="HEK293" style="display: none;" id="checkbox-3">
+					    <label for="checkbox-3"></label><p style="margin-left: 25px;margin-top: -18px;font-size: 17px">&nbsp;&nbsp;HEK293</p>
+					</span>
+					<span class="" style="margin-top: 10px">
+					    <input type="checkbox" value="HEK293T" style="display: none;" id="checkbox-4">
+					    <label for="checkbox-4"></label><p style="margin-left: 25px;margin-top: -18px;font-size: 17px">&nbsp;&nbsp;HEK293T</p>
+					</span>
+					<span class="" style="margin-top: 10px">
+					    <input type="checkbox"  style="display: none;" id="checkbox-5">
+					    <label for="checkbox-5"></label><p style="margin-left: 25px;margin-top: -18px;font-size: 17px">&nbsp;&nbsp;Hela</p>
+					</span>
+					<span class="" style="margin-top: 10px">
+					    <input type="checkbox"  style="display: none;" id="checkbox-6">
+					    <label for="checkbox-6"></label><p style="margin-left: 25px;margin-top: -18px;font-size: 17px">&nbsp;&nbsp;MES</p>
+					</span>
 				</div>
 				<div id="probeLength" >
 					<p style="padding-left: 50px; padding-top: 23px; font-size: 20px">Probe Length</p>
@@ -182,7 +210,7 @@
 		<p style="padding-left: 10px;font-size: 17px"><i class="fas fa-exclamation-circle" style="color: rgba(222,60,60,1);font-size: 28px;"></i>Please confirm your target sequence, probe parameters and submit your mission.</p>
 		<button type="button" class="pure-button" id="submitbutton" name="submit" onclick="resultObtainpage()">Submit mission</button>
 		<script type="text/javascript">
-			function loadXMLDoc(){
+			function resultObtainpage(){
 				var xmlhttp
 				if (window.XMLHttpRequest){ //code for IE7+, Firefox, Chrome, Opera, Safari
 					xmlhttp = new XMLHttpRequest(); 
@@ -191,7 +219,12 @@
 					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
 				}
 			}
-			xmlhttp.open("GET","./probe_php/Result_obtain.php",true)
+			xmlhttp.onreadystatechange=function(){
+				document.getElemtntById("resultObtain").innerHTML="<button type="button" class="pure-button" style="margin-left: 10px;margin-top: 10px" id="obtainbutton" name="obtain">Submit mission</button>"
+			}
+
+			xmlhttp.open("GET","/submit.html",true);
+			xmlhttp.send()
 		</script>
 	</fieldset>
 	<br>
@@ -203,7 +236,8 @@
 		<legend style="padding:10px 10px 10px 10px"><h2>
 			Result Obtain
 	    </h2></legend>
-	    <p style="padding-left: 10px;font-size: 17px">Thanks for using DR-Probe and your Results can be found at the following website.</p>		
+	    <p style="padding-left: 10px;font-size: 17px">Thanks for using DR-Probe and your Results can be found at the following website.</p>
+	    <div id="resultObtain"></div>	
 	</fieldset>
 	<br><br><br>
 </div>
@@ -213,8 +247,3 @@
 
 
 
-
-
-<script type="text/javascript">
-	
-</script>
