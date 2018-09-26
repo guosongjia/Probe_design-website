@@ -218,13 +218,12 @@
 				else{ //code for IE7+, Firefox, Chrome, Opera, Safari
 					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
 				}
-			}
 			xmlhttp.onreadystatechange=function(){
 				document.getElemtntById("resultObtain").innerHTML="<button type="button" class="pure-button" style="margin-left: 10px;margin-top: 10px" id="obtainbutton" name="obtain">Submit mission</button>"
 			}
-
 			xmlhttp.open("GET","/submit.html",true);
 			xmlhttp.send()
+		}
 		</script>
 	</fieldset>
 	<br>
